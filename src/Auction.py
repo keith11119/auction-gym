@@ -30,6 +30,8 @@ class Auction:
         num_slots = self.rng.integers(1, self.max_slots + 1)
 
         # Sample a true context vector
+        # The true context vector is the same for all agents
+        # the last element is always 1.0 to account for the bias
         true_context = np.concatenate((self.rng.normal(0, self.embedding_var, size=self.embedding_size), [1.0]))
 
         # Mask true context into observable context
@@ -43,6 +45,7 @@ class Auction:
         participating_agents = [self.agents[idx] for idx in participating_agents_idx]
         for agent in participating_agents:
             # Get the bid and the allocated item
+            # OracleAllocator needs to know the true context
             if isinstance(agent.allocator, OracleAllocator):
                 bid, item = agent.bid(true_context)
             else:

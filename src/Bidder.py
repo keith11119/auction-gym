@@ -159,6 +159,8 @@ class ValueLearningBidder(Bidder):
     def __init__(self, rng, gamma_sigma, init_gamma=1.0, inference='search'):
         self.gamma_sigma = gamma_sigma
         self.prev_gamma = init_gamma
+        # search: estimate the optimal shading distribution
+        # policy: estimate the optimal shading distribution and use it to shade bids
         assert inference in ['search', 'policy']
         self.inference = inference
         self.gammas = []
@@ -176,6 +178,7 @@ class ValueLearningBidder(Bidder):
             # Sample the bid shadin factor 'gamma' from a Gaussian
             gamma = self.rng.normal(self.prev_gamma, self.gamma_sigma)
             normal_pdf = lambda g: np.exp(-((self.prev_gamma - g) / self.gamma_sigma)**2/2) / (self.gamma_sigma * np.sqrt(2 * np.pi))
+            # Record the bid shading factor
             propensity = normal_pdf(gamma)
         elif self.inference == 'search':
             # Option 2:
