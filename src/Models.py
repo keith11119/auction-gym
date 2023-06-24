@@ -68,6 +68,8 @@ class BidShadingPolicy(torch.nn.Module):
         # Input: P(click), value
         # Output: mu, sigma for Gaussian bid shading distribution
         # Learnt to maximise E[P(win|gamma)*(value - price)] when gamma ~ N(mu, sigma)
+        # the first part in equation 4 of the paper
+        # the hidden layers are not used
         self.shared_linear = torch.nn.Linear(2, 2, bias=True)
 
         self.mu_linear_hidden = torch.nn.Linear(2, 2)

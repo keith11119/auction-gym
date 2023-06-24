@@ -57,11 +57,13 @@ def parse_config(path):
 
     # First sample item catalog (so it is consistent over different configs with the same seed)
     # Agent : (item_embedding, item_value)
+    # agent2items is a dictionary mapping agent names to a matrix of item embeddings
     agents2items = {
         agent_config['name']: rng.normal(0.0, embedding_var, size=(agent_config['num_items'], embedding_size))
         for agent_config in agent_configs
     }
-
+    # agents2item_values is a dictionary mapping agent names to a vector of item values
+    # (sampled from a log-normal distribution)
     agents2item_values = {
         agent_config['name']: rng.lognormal(0.1, 0.2, agent_config['num_items'])
         for agent_config in agent_configs
