@@ -203,6 +203,7 @@ class ValueLearningBidder(Bidder):
             x = torch.Tensor([estimated_CTR, value])
             with torch.no_grad():
                 gamma, propensity = self.bidding_policy(x)
+                # propensity means the probability of sampling this action (gamma)
                 gamma = gamma.detach().item()
 
         bid *= gamma
