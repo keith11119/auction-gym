@@ -628,14 +628,16 @@ class DoublyRobustBidder(Bidder):
 
 class SurrogateBidder(Bidder):
 
-    def __init__(self, rng, gamma_sigma, model, input_context = True, output_bid = True, init_gamma=1.0):
-        self.gamma_sigma = gamma_sigma
+    def __init__(self, rng, model, input_context = True, output_bid = True, init_gamma=1.0):
         self.prev_gamma = init_gamma
         self.gammas = []
         self.propensities = []
         # self.winrate_model = PyTorchWinRateEstimator()
         self.bidding_policy = model
         self.model_initialised = False
+        self.model = model
+        self.input_context = input_context
+        self.output_bid = output_bid
         super(SurrogateBidder, self).__init__(rng)
 
     def bid(self, value, context, estimated_CTR):
