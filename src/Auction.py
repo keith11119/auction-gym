@@ -25,6 +25,7 @@ class Auction:
 
         self.num_participants_per_round = num_participants_per_round
 
+
     def simulate_opportunity(self):
         # Sample the number of slots uniformly between [1, max_slots]
         num_slots = self.rng.integers(1, self.max_slots + 1)
@@ -43,6 +44,7 @@ class Auction:
         CTRs = []
         participating_agents_idx = self.rng.choice(len(self.agents), self.num_participants_per_round, replace=False)
         participating_agents = [self.agents[idx] for idx in participating_agents_idx]
+
         for agent in participating_agents:
             # Get the bid and the allocated item
             # OracleAllocator needs to know the true context
@@ -78,3 +80,4 @@ class Auction:
 
     def clear_revenue(self):
         self.revenue = 0.0
+

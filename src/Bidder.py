@@ -625,3 +625,44 @@ class DoublyRobustBidder(Bidder):
         else:
             self.gammas = self.gammas[-memory:]
             self.propensities = self.propensities[-memory:]
+
+class SurrogateBidder(Bidder):
+
+    def __init__(self, rng, model, input_context = True, output_bid = True, init_gamma=1.0):
+        self.prev_gamma = init_gamma
+        self.gammas = []
+        self.propensities = []
+        # self.winrate_model = PyTorchWinRateEstimator()
+        self.bidding_policy = model
+        self.model_initialised = False
+        self.model = model
+        self.input_context = input_context
+        self.output_bid = output_bid
+        super(SurrogateBidder, self).__init__(rng)
+
+    def bid(self, value, context, estimated_CTR):
+        # Compute the bid as expected value
+        bid = value * estimated_CTR
+        if self.output_bid:
+            if self.input_context:
+                return float(self.model.predict(context.reshape(-1, len(context))))
+            else:
+                return float(self.model.predict([estimated_CTR, value].reshape(-1, 2)))
+        else:
+            if self.input_context:
+                gamma = float(self.model.predict(context.reshape(-1, len(context))))
+            else:
+                gamma = float(self.model.predict([estimated_CTR, value].reshape(-1, 2)))
+            bid *= gamma
+            self.gammas.append(gamma)
+            self.propensities.append(1)
+            return bid
+
+    def clear_logs(self, memory):
+        if not memory:
+            self.gammas = []
+            self.propensities = []
+        else:
+            self.gammas = self.gammas[-memory:]
+            self.propensities = self.propensities[-memory:]
+
