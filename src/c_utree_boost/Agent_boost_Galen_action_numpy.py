@@ -5,11 +5,9 @@
 # Embedded file name: /Local-Scratch/PycharmProjects/Sport-Analytic-U-Tree/continuous-U-Tree-ice-hockey/c_utree_oracle/Agent_boost_Galen.py
 # Compiled at: 2018-01-03 14:44:40
 import gc
-import numpy as np, ast, scipy.io as sio, os, unicodedata, pickle, C_UTree_boost_Galen_action as C_UTree, csv
-import tensorflow.compat.v1 as tf
-tf.disable_v2_behavior()
+import numpy as np, ast, scipy.io as sio, os, unicodedata, pickle, C_UTree_boost_Galen_action_numpy as C_UTree, csv
 from scipy.stats import pearsonr
-
+import timeit
 import linear_regression
 import sys
 # from tensorflow.python.framework import ops
@@ -27,11 +25,11 @@ class CUTreeAgent:
         self.cff = check_fringe_freq
         self.problem = problem
         # self.TREE_PATH = './csv_oracle_linear_qsplit_test/'
-        self.SAVE_PATH = './UTree_model/DR/model_boost_linear_qsplit_noabs_save{0}/'.format(
+        self.SAVE_PATH = '../UTree_model_numpy/DR/model_boost_linear_qsplit_noabs_save{0}/'.format(
             training_mode)
-        self.SAVE_MODEL_TREE_PATH = './UTree_model/DR/model_boost_add_linear_qsplit_save{0}/'.format(
+        self.SAVE_MODEL_TREE_PATH = '../UTree_model_numpy/DR/model_boost_add_linear_qsplit_save{0}/'.format(
             training_mode)
-        self.PRINT_TREE_PATH = './print_tree_record/print_DR_boost_linear_tree_split{0}.txt'.format(
+        self.PRINT_TREE_PATH = '../print_tree_record_numpy/print_DR_boost_linear_tree_split{0}.txt'.format(
             training_mode)
         self.training_mode = training_mode
         # print(tf.__version__)
@@ -50,7 +48,10 @@ class CUTreeAgent:
         i = C_UTree.Instance(t, currentObs, qValue)
         self.utree.updateCurrentNode(i, beginflag)
         if check_fringe:
+            start_time = timeit.default_timer()
             self.utree.testFringe() # ks test is performed here?
+            stop_time = timeit.default_timer()
+            print('testFringe time: ', stop_time - start_time)
 
     # def read_csv_game_record(self, csv_dir):
     #     dict_all = []
@@ -116,7 +117,7 @@ class CUTreeAgent:
 
     def get_prediction_new(self, save_path, read_game_number):
         print(sys.stderr, 'starting from {0}'.format(read_game_number))
-        self.utree = pickle.load(open(self.SAVE_PATH + 'pickle_Game_File_' + str(read_game_number) + '.p', 'rb'))
+        self.utree = pickle.load(open(save_path + 'pickle_Game_File_' + str(read_game_number) + '.p', 'rb'))
         print(sys.stderr, 'finishing read tree')
         game_directory = '../data_DR_L/'
 
@@ -139,7 +140,7 @@ class CUTreeAgent:
 
                 value = currentObs @ node.weight + node.bias
 
-                prediction_results.append(value[0][0])
+                prediction_results.append(value[0])
                 print(sys.stderr, f"finish index: {index} - {value}")
 
         return prediction_results

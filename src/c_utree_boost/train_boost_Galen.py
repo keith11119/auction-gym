@@ -1,7 +1,7 @@
 import optparse
 import Problem
 import pickle
-import Agent_boost_Galen_action as Agent
+import Agent_boost_Galen_action_numpy as Agent
 
 optparser = optparse.OptionParser()
 optparser.add_option("-m", "--max_node_hist", dest="MAX_NODE_HIST", default=3000,
@@ -30,7 +30,7 @@ opts = optparser.parse_args()[0]
 #         CUTreeAgent.episode(game_number=int(opts.GAME_NUMBER))
 
 def train():
-    problem = Problem.Problem(games_directory="../../data_DR_L_split/train/")
+    problem = Problem.Problem(games_directory="../../data_DR_L_split/agent_0/train/")
 
     CUTreeAgent = Agent.CUTreeAgent(problem=problem, max_hist=3000,
                                     check_fringe_freq=1200, is_episodic=0, training_mode='')
