@@ -3,18 +3,18 @@
   "num_runs": 2,
   "num_iter" : 3,
   "rounds_per_iter": 10000,
-  "num_participants_per_round": 4,
-  "embedding_size": 5,
+  "num_participants_per_round": 2,
+  "embedding_size": 10,
   "embedding_var": 1.0,
-  "obs_embedding_size": 4,
+  "obs_embedding_size": 9,
   "allocation": "FirstPrice",
   "agents": [ {
     "name": "DR",
-    "num_copies": 6,
+    "num_copies": 3,
     "num_items": 12,
       "allocator": {
         "type": "PyTorchLogisticRegressionAllocator",
-        "kwargs": {"embedding_size": 4, "num_items": 12}
+        "kwargs": {"embedding_size": 9, "num_items": 12}
       },
       "bidder": {
           "type": "DoublyRobustBidder",

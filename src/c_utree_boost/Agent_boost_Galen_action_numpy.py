@@ -19,18 +19,22 @@ class CUTreeAgent:
       Agent that implements McCallum's Sport-Analytic-U-Tree algorithm
     """
 
-    def __init__(self, problem, max_hist, check_fringe_freq, is_episodic=0, training_mode=''):
-        self.utree = C_UTree.CUTree(gamma=problem.gamma, dim_sizes=problem.dimSizes, dim_names=problem.dimNames,
-                                    max_hist=max_hist, is_episodic=is_episodic, training_mode=training_mode)
-        self.cff = check_fringe_freq
+    def __init__(self, problem, max_hist, max_depth=20, min_split_instances=50, training_mode=''):
+        self.utree = C_UTree.CUTree(dim_sizes=problem.dimSizes, dim_names=problem.dimNames, max_hist=max_hist,
+                                    max_depth=max_depth, min_split_instances=min_split_instances,
+                                    training_mode=training_mode)
         self.problem = problem
         # self.TREE_PATH = './csv_oracle_linear_qsplit_test/'
-        self.SAVE_PATH = '../UTree_model_numpy/DR/model_boost_linear_qsplit_noabs_save{0}/'.format(
-            training_mode)
-        self.SAVE_MODEL_TREE_PATH = '../UTree_model_numpy/DR/model_boost_add_linear_qsplit_save{0}/'.format(
-            training_mode)
-        self.PRINT_TREE_PATH = '../print_tree_record_numpy/print_DR_boost_linear_tree_split{0}.txt'.format(
-            training_mode)
+        estimator_path = f'../UTree_model_numpy/{problem.estimator_type}_{problem.competition}_adaptiveTrain/'
+        if not os.path.exists(estimator_path):
+            os.makedirs(estimator_path)
+        agent_path = f'{estimator_path}agent_{problem.agent_num}/'
+        if not os.path.exists(agent_path):
+            os.makedirs(agent_path)
+        self.SAVE_PATH = f'{agent_path}model_boost_linear_save_{problem.split_size}_max_hist_{max_hist}_max_depth_{max_depth}_min_split_instances_{min_split_instances}{training_mode}/'
+        if not os.path.exists(self.SAVE_PATH):
+            os.makedirs(self.SAVE_PATH)
+        self.PRINT_TREE_PATH = f'../print_tree_record_numpy/print_{problem.estimator_type}_{problem.competition}_adaptiveTrain_agent_{problem.agent_num}_boost_linear_tree_split_{problem.split_size}_max_hist_{max_hist}_max_depth_{max_depth}_min_split_instances_{min_split_instances}{training_mode}.txt'
         self.training_mode = training_mode
         # print(tf.__version__)
 
@@ -115,33 +119,29 @@ class CUTreeAgent:
         return zip(q_home.tolist(), q_away.tolist(), q_end.tolist())
 
 
-    def get_prediction_new(self, save_path, read_game_number):
+    def get_prediction(self, save_path, game_path, read_game_number, data_set = 'test'):
         print(sys.stderr, 'starting from {0}'.format(read_game_number))
         self.utree = pickle.load(open(save_path + 'pickle_Game_File_' + str(read_game_number) + '.p', 'rb'))
         print(sys.stderr, 'finishing read tree')
-        game_directory = '../data_DR_L/'
 
         # game_testing_record_dict = {}
         prediction_results = []
-        game_to_print_list = range(1)
-        for game_number in game_to_print_list:
+        game_record = self.read_csv_game_record_auction(f"{game_path}{data_set}_{self.problem.agent_num}.csv")
+        event_number = len(game_record)
 
-            game_record = self.read_csv_game_record_auction(f"{game_directory}test_0.csv")
-            event_number = len(game_record)
+        for index in range(0, event_number):
 
-            for index in range(0, event_number):
+            transition = game_record[index]
+            currentObs = transition[:5]
+            qValue = float(transition[7])
 
-                transition = game_record[index]
-                currentObs = transition[:5]
-                qValue = float(transition[7])
+            inst = C_UTree.Instance(-1, currentObs, None)
+            node = self.utree.getAbsInstanceLeaf(inst)
 
-                inst = C_UTree.Instance(-1, currentObs, None)
-                node = self.utree.getAbsInstanceLeaf(inst)
+            value = currentObs @ node.weight + node.bias
 
-                value = currentObs @ node.weight + node.bias
-
-                prediction_results.append(value[0])
-                print(sys.stderr, f"finish index: {index} - {value}")
+            prediction_results.append(value[0])
+            # print(sys.stderr, f"finish index: {index} - {value}")
 
         return prediction_results
 

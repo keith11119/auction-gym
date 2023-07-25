@@ -27,11 +27,11 @@ class CUTreeAgent:
         self.cff = check_fringe_freq
         self.problem = problem
         # self.TREE_PATH = './csv_oracle_linear_qsplit_test/'
-        self.SAVE_PATH = './UTree_model/DR/model_boost_linear_qsplit_noabs_save{0}/'.format(
+        self.SAVE_PATH = './UTree_model/DM/model_boost_linear_qsplit_noabs_save{0}/'.format(
             training_mode)
-        self.SAVE_MODEL_TREE_PATH = './UTree_model/DR/model_boost_add_linear_qsplit_save{0}/'.format(
+        self.SAVE_MODEL_TREE_PATH = './UTree_model/DM/model_boost_add_linear_qsplit_save{0}/'.format(
             training_mode)
-        self.PRINT_TREE_PATH = './print_tree_record/print_DR_boost_linear_tree_split{0}.txt'.format(
+        self.PRINT_TREE_PATH = './print_tree_record/print_DM_boost_linear_tree_split{0}.txt'.format(
             training_mode)
         self.training_mode = training_mode
         # print(tf.__version__)
@@ -118,7 +118,7 @@ class CUTreeAgent:
         print(sys.stderr, 'starting from {0}'.format(read_game_number))
         self.utree = pickle.load(open(self.SAVE_PATH + 'pickle_Game_File_' + str(read_game_number) + '.p', 'rb'))
         print(sys.stderr, 'finishing read tree')
-        game_directory = '../data_DR_L/'
+        game_directory = '../data_DM_L/'
 
         # game_testing_record_dict = {}
         prediction_results = []

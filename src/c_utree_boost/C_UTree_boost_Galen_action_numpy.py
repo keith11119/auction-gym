@@ -9,11 +9,6 @@ import timeit
 NodeSplit = 0
 NodeLeaf = 1
 NodeFringe = 2
-# ActionDimension = -1
-AbsorbAction = 5
-HOME = 0
-AWAY = 1
-MAX_DEPTH = 20
 FEATURE_NAME_DICT = {'position': 0, 'velocity': 1}
 
 class UNode:
@@ -162,8 +157,7 @@ class Distinction:
         return self.dimension == distinction.dimension and self.back_idx == distinction.back_idx and self.continuous_divide_value == distinction.continuous_divide_value
 
 class CUTree:
-    def __init__(self, gamma, dim_sizes, dim_names, max_hist, max_back_depth=1, minSplitInstances=50,
-                 significance_level=0.0005, is_episodic=0, hard_code_flag=True, training_mode=''):
+    def __init__(self, dim_sizes, dim_names, max_hist, max_back_depth=1, max_depth=20, min_split_instances=50, hard_code_flag=True, training_mode=''):
 
         # LR = linear_regression.LinearRegression()
         # weight = LR.weight_initialization()
@@ -172,15 +166,14 @@ class CUTree:
         self.node_id_count = 0
         self.root = UNode(self.genId(), NodeLeaf, None, 1)
         #self.n_actions = n_actions
-        self.max_hist = max_hist
+        self.max_hist = int(max_hist)
         self.max_back_depth = max_back_depth
-        self.gamma = gamma
+        self.max_depth = int(max_depth)
         self.history = []
         self.n_dim = len(dim_sizes)
         self.dim_sizes = dim_sizes
         self.dim_names = dim_names
-        self.minSplitInstances = minSplitInstances
-        self.significanceLevel = significance_level
+        self.min_split_instances = int(min_split_instances)
         self.nodes = {self.root.idx: self.root}
         self.term = UNode(self.genId(), NodeLeaf, None, 1)
         self.start = UNode(self.genId(), NodeLeaf, None, 1)
@@ -359,7 +352,7 @@ class CUTree:
         2. try to split node according to distinction and get expected future discounted returns
         3. perform test until find the proper distinction, otherwise, return None
         """
-        if len(node.instances) < self.minSplitInstances:
+        if len(node.instances) < self.min_split_instances:
             return None
         cds = self.getCandidateDistinctions(node)
         return self.ksTestonQ(node, cds)
@@ -407,7 +400,7 @@ class CUTree:
                     LR = linear_regression.LinearRegression(training_epochs=training_epochs, learning_rate=lr,
                                                             n_dim=len(train_x[0]))
                 elif len(self.training_mode) == 0:
-                    LR = linear_regression.LinearRegression(n_dim=len(train_x[0]))
+                    LR = linear_regression.LinearRegression(n_dim=len(train_x[0]), training_epochs=50)
                 else:
                     raise ValueError("undefined training mode")
                 if node.weight is None or node.bias is None:
@@ -440,13 +433,13 @@ class CUTree:
 
             return 1
 
-    def ksTestonQ(self, node, cds, diff_significanceLevel=float(0.01)):
+    def ksTestonQ(self, node, cds, diff_significanceLevel=0.0):
         """
         KS test is performed here
         1. find all the possible distinction
         2. try to split node according to distinction and get expected future discounted returns
         3. perform ks test until find the proper distinction, otherwise, return None
-        :param diff_significanceLevel:
+        :param diff_significanceLevel: changed from 0.01 to 0.0
         :param node:
         :return:
         """
@@ -619,7 +612,7 @@ class CUTree:
         :param node: node to test
         :return: number of splits
         """
-        if node.depth >= MAX_DEPTH:
+        if node.depth >= int(self.max_depth):
             return 0
         if node.nodeType == NodeLeaf:
             # if self.game_number <= 50:

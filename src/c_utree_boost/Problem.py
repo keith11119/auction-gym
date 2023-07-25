@@ -13,16 +13,14 @@ class Problem:
     Can be aggregated or unaggregated.
     """
 
-    def __init__(self, games_directory = '../data_DR_L_split/', gamma=1):
+    def __init__(self, estimator_type, competition='L', agent_num=0, split_size=100, games_directory = '../data_DR_L_split_100/'):
         assert games_directory is not None
         self.games_directory = games_directory
-        # self.actions = {'push_left': 0,
-        #                 'no_push': 1,
-        #                 'push_right': 2
-        #                 }
-        # self.stateFeatures = {'position': 'continuous', 'velocity': 'continuous'}
+        self.estimator_type = estimator_type
+        self.split_size = split_size
+        self.competition = competition
+        self.agent_num = agent_num
         self.stateFeatures = {'0': 'continuous', '1': 'continuous', '2': 'continuous', '3': 'continuous', '4': 'continuous'}
-        self.gamma = gamma
         self.reset = None
         self.isEpisodic = True
         self.nStates = len(self.stateFeatures)
@@ -31,5 +29,4 @@ class Problem:
         d = datetime.today().strftime('%d-%m-%Y--%H:%M:%S')
         # self.probName = ('{0}_gamma={1}_mode={2}').format(d, gamma,
         #                                                   'Action Feature States' if self.nStates > 12 else 'Feature States')
-        self.games_directory = games_directory
         return

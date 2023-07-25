@@ -413,7 +413,7 @@ class CUTree:
                     #     lr = float(lr) / 5
                     LR = linear_regression.LinearRegression(training_epochs=training_epochs, learning_rate=lr, n_dim=len(train_x[0]))
                 elif len(self.training_mode) == 0:
-                    LR = linear_regression.LinearRegression(n_dim=len(train_x[0]))
+                    LR = linear_regression.LinearRegression(n_dim=len(train_x[0]), training_epochs=50)
                 else:
                     raise ValueError("undefined training mode")
                 if node.weight is None or node.bias is None:

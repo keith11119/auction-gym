@@ -8,7 +8,7 @@ import sklearn.linear_model
 from sklearn.metrics import mean_squared_error, r2_score
 
 class LinearRegression:
-    def __init__(self, training_epochs=500, learning_rate=0.05, n_dim=2, batch_size=40):
+    def __init__(self, training_epochs=50, learning_rate=0.05, n_dim=2, batch_size=200):
         self.learning_rate = learning_rate
         self.training_epochs = training_epochs  # this maybe too much?
         self.n_dim = n_dim
