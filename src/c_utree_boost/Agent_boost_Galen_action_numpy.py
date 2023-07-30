@@ -19,13 +19,13 @@ class CUTreeAgent:
       Agent that implements McCallum's Sport-Analytic-U-Tree algorithm
     """
 
-    def __init__(self, problem, max_hist, max_depth=20, min_split_instances=50, training_mode=''):
+    def __init__(self, problem, max_hist, max_depth=20, min_split_instances=50, training_mode='', special='', num_contexts=5):
         self.utree = C_UTree.CUTree(dim_sizes=problem.dimSizes, dim_names=problem.dimNames, max_hist=max_hist,
                                     max_depth=max_depth, min_split_instances=min_split_instances,
                                     training_mode=training_mode)
         self.problem = problem
         # self.TREE_PATH = './csv_oracle_linear_qsplit_test/'
-        estimator_path = f'../UTree_model_numpy/{problem.estimator_type}_{problem.competition}_adaptiveTrain/'
+        estimator_path = f'../UTree_model_numpy/{problem.estimator_type}_{problem.competition}{special}/'
         if not os.path.exists(estimator_path):
             os.makedirs(estimator_path)
         agent_path = f'{estimator_path}agent_{problem.agent_num}/'
@@ -34,8 +34,9 @@ class CUTreeAgent:
         self.SAVE_PATH = f'{agent_path}model_boost_linear_save_{problem.split_size}_max_hist_{max_hist}_max_depth_{max_depth}_min_split_instances_{min_split_instances}{training_mode}/'
         if not os.path.exists(self.SAVE_PATH):
             os.makedirs(self.SAVE_PATH)
-        self.PRINT_TREE_PATH = f'../print_tree_record_numpy/print_{problem.estimator_type}_{problem.competition}_adaptiveTrain_agent_{problem.agent_num}_boost_linear_tree_split_{problem.split_size}_max_hist_{max_hist}_max_depth_{max_depth}_min_split_instances_{min_split_instances}{training_mode}.txt'
+        self.PRINT_TREE_PATH = f'../print_tree_record_numpy/print_{problem.estimator_type}_{problem.competition}{special}_agent_{problem.agent_num}_boost_linear_tree_split_{problem.split_size}_max_hist_{max_hist}_max_depth_{max_depth}_min_split_instances_{min_split_instances}{training_mode}.txt'
         self.training_mode = training_mode
+        self.num_contexts = num_contexts
         # print(tf.__version__)
 
     def update(self, currentObs, qValue, check_fringe=0, beginflag=False):
@@ -132,8 +133,8 @@ class CUTreeAgent:
         for index in range(0, event_number):
 
             transition = game_record[index]
-            currentObs = transition[:5]
-            qValue = float(transition[7])
+            currentObs = transition[:self.num_contexts]
+            qValue = float(transition[self.num_contexts+2])
 
             inst = C_UTree.Instance(-1, currentObs, None)
             node = self.utree.getAbsInstanceLeaf(inst)
@@ -324,11 +325,11 @@ class CUTreeAgent:
 
             if self.problem.isEpisodic:
                 transition = game_record[index]
-                currentObs = transition[:5]
+                currentObs = transition[:self.num_contexts]
                 # nextObs = transition.get('newObservation').split('$')
                 # reward = float(transition.get('reward'))
                 # action = float(transition.get('action'))
-                qValue = float(transition[7])
+                qValue = float(transition[self.num_contexts+2])
 
                 if index == event_number - 1:  # game ending
                     print(sys.stderr, '=============== update starts ===============')

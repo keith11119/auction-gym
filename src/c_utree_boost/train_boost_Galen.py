@@ -27,6 +27,8 @@ optparser.add_option("-p", "--max_depth", dest="MAX_DEPTH", default=20,
                      help="max depth")
 optparser.add_option("-i", "--min_split_instances", dest="MIN_INSTANCES", default=50,
                      help="min split instances")
+optparser.add_option("-x", "--special", dest="SPECIAL", default='',
+                     help="variations")
 
 
 opts = optparser.parse_args()[0]
@@ -34,7 +36,7 @@ opts = optparser.parse_args()[0]
 
 def train():
     problem = Problem.Problem(estimator_type=opts.ESTIMATOR, competition=opts.COMPETITION, agent_num=opts.AGENT, split_size=opts.SPLIT_SIZE, games_directory=opts.GAME_DIRECTORY)
-    CUTreeAgent = Agent.CUTreeAgent(problem=problem, max_hist=opts.MAX_NODE_HIST, max_depth=opts.MAX_DEPTH, min_split_instances=opts.MIN_INSTANCES, training_mode=opts.TRAINING_MODE)
+    CUTreeAgent = Agent.CUTreeAgent(problem=problem, max_hist=opts.MAX_NODE_HIST, max_depth=opts.MAX_DEPTH, min_split_instances=opts.MIN_INSTANCES, training_mode=opts.TRAINING_MODE, special=opts.SPECIAL)
     # temp_output_path = f'../training_numpy_tempt_out_dir/{opts.ESTIMATOR}_{opts.COMPETITION}/agent_{opts.AGENT}/split_{opts.SPLIT_SIZE}/max_hist_10000_max_depth_{opts.MAX_DEPTH}_min_split_instances_{opts.MIN_INSTANCES}/'
     # if not os.path.exists(temp_output_path):
     #     os.makedirs(temp_output_path)
