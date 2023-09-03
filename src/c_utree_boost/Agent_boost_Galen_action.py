@@ -27,11 +27,11 @@ class CUTreeAgent:
         self.cff = check_fringe_freq
         self.problem = problem
         # self.TREE_PATH = './csv_oracle_linear_qsplit_test/'
-        self.SAVE_PATH = './UTree_model/DR/model_boost_linear_qsplit_noabs_save{0}/'.format(
+        self.SAVE_PATH = './UTree_model/DM/model_boost_linear_qsplit_noabs_save{0}/'.format(
             training_mode)
-        self.SAVE_MODEL_TREE_PATH = './UTree_model/DR/model_boost_add_linear_qsplit_save{0}/'.format(
+        self.SAVE_MODEL_TREE_PATH = './UTree_model/DM/model_boost_add_linear_qsplit_save{0}/'.format(
             training_mode)
-        self.PRINT_TREE_PATH = './print_tree_record/print_DR_boost_linear_tree_split{0}.txt'.format(
+        self.PRINT_TREE_PATH = './print_tree_record/print_DM_boost_linear_tree_split{0}.txt'.format(
             training_mode)
         self.training_mode = training_mode
         # print(tf.__version__)
@@ -113,47 +113,12 @@ class CUTreeAgent:
 
         return zip(q_home.tolist(), q_away.tolist(), q_end.tolist())
 
-    def get_prediction(self, save_path, read_game_number):
-        print(sys.stderr, 'starting from {0}'.format(read_game_number))
-        self.utree = pickle.load(open(self.SAVE_PATH + 'pickle_Game_File_' + str(read_game_number) + '.p', 'rb'))
-        print(sys.stderr, 'finishing read tree')
-        game_directory = '../data_DR_L/'
-
-        # game_testing_record_dict = {}
-        prediction_results = []
-        game_to_print_list = range(0, 100)
-        for game_number in game_to_print_list:
-
-            game_record = self.read_csv_game_record_auction(f"{game_directory}train_0.csv")
-            event_number = len(game_record)
-
-            for index in range(0, event_number):
-
-                transition = game_record[index]
-                currentObs = transition[:5]
-                qValue = float(transition[7])
-
-                inst = C_UTree.Instance(-1, currentObs, None)
-                node = self.utree.getAbsInstanceLeaf(inst)
-
-                sess = tf.Session()
-                LR = linear_regression.LinearRegression(n_dim=self.utree.n_dim)
-                LR.read_weights(weights=node.weight, bias=node.bias)
-                LR.readout_linear_regression_model()
-                sess.run(LR.init)
-                qValues_output = sess.run(LR.pred, feed_dict={LR.X: [currentObs]}).tolist()
-                sess.close()
-
-                prediction_results.append(qValues_output)
-                print(sys.stderr, "finish index: ", index, qValues_output)
-
-        return prediction_results
 
     def get_prediction_new(self, save_path, read_game_number):
         print(sys.stderr, 'starting from {0}'.format(read_game_number))
         self.utree = pickle.load(open(self.SAVE_PATH + 'pickle_Game_File_' + str(read_game_number) + '.p', 'rb'))
         print(sys.stderr, 'finishing read tree')
-        game_directory = '../data_DR_L/'
+        game_directory = '../data_DM_L/'
 
         # game_testing_record_dict = {}
         prediction_results = []
@@ -178,84 +143,6 @@ class CUTreeAgent:
                 print(sys.stderr, f"finish index: {index} - {value}")
 
         return prediction_results
-
-    def boost_tree_testing_performance(self, save_path, read_game_number, save_correlation_dir = '', save_mse_dir = '', save_mae_dir = '', save_rae_dir = '', save_rse_dir = ''):
-        print(sys.stderr, 'starting from {0}'.format(read_game_number))
-        self.utree = pickle.load(open(self.SAVE_PATH + 'pickle_Game_File_' + str(read_game_number) + '.p', 'rb'))
-        print(sys.stderr, 'finishing read tree')
-        game_directory = self.problem.games_directory
-
-        game_testing_record_dict = {}
-
-        game_to_print_list = range(1001, 1101)
-        for game_number in game_to_print_list:
-
-            game_record = self.read_csv_game_record_auction(
-                self.problem.games_directory + 'record_moutaincar_transition_game{0}.csv'.format(int(game_number)))
-
-            event_number = len(game_record)
-
-            for index in range(0, event_number):
-
-                transition = game_record[index]
-                currentObs = transition.get('observation').split('$')
-                nextObs = transition.get('newObservation').split('$')
-                reward = float(transition.get('reward'))
-                action = float(transition.get('action'))
-                qValue = float(transition.get('qValue'))
-
-                inst = C_UTree.Instance(-1, currentObs, action, nextObs, reward, None)
-                node = self.utree.getAbsInstanceLeaf(inst)
-
-                if game_testing_record_dict.get(node) is None:
-                    game_testing_record_dict.update({node: [currentObs, qValue, action]})
-                else:
-                    node_record = game_testing_record_dict.get(node)
-                    node_record.append([currentObs, qValue, action])
-                    game_testing_record_dict.update({node: node_record})
-
-        all_q_values_record = {'output_q': [],
-                               'test_q': [],
-                               'oracle_q': [],
-                               'merge_q': []
-                               }
-
-        for node in game_testing_record_dict.keys():
-            # print node.idx
-            node_record = game_testing_record_dict.get(node)
-            currentObs_node = node_record[0]
-            qValues_node = node_record[1]
-            actions = node_record[2]
-
-            test_q = all_q_values_record.get('test_q')
-            test_append_q = [qValues_node]
-            test_q.append(test_append_q)
-
-            sess = tf.Session()
-            LR = linear_regression.LinearRegression(n_dim=self.utree.n_dim)
-            LR.read_weights(weights=node.weight, bias=node.bias)
-            LR.readout_linear_regression_model()
-            sess.run(LR.init)
-            qValues_output = sess.run(LR.pred, feed_dict={LR.X: [currentObs_node]}).tolist()
-
-            output_q = all_q_values_record.get('output_q')
-            output_append_q = [qValues_list[0] for qValues_list in qValues_output]
-            output_q.append(output_append_q)
-
-            oracle_q = all_q_values_record.get('oracle_q')
-            oracle_append_q = [node.qValues[int(actions)]]
-            oracle_q.append(oracle_append_q)
-
-            merge_q = all_q_values_record.get('merge_q')
-            merge_append_q = self.merge_oracle_linear_q(test_append_q, output_append_q,
-                                                        oracle_append_q)
-            merge_q.append(merge_append_q)
-
-        # self.compute_correlation(all_q_values_record, save_correlation_dir)
-        # self.compute_mae(all_q_values_record, save_mae_dir)
-        # self.compute_mse(all_q_values_record, save_mse_dir)
-        self.compute_rae(all_q_values_record, save_rae_dir)
-        self.compute_rse(all_q_values_record, save_rse_dir)
 
     def merge_oracle_linear_q(self, test_qs, linear_qs, oracle_qs):
         criteria = 0.7
