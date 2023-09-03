@@ -26,7 +26,7 @@ class Auction:
 
         self.num_participants_per_round = num_participants_per_round
 
-    def simulate_opportunity_complex(self):
+    def simulate_opportunity_skewed(self):
         # Sample the number of slots uniformly between [1, max_slots]
         num_slots = self.rng.integers(1, self.max_slots + 1)
 
@@ -131,6 +131,14 @@ class Auction:
                 else:
                     agent.set_price(price)
             self.revenue += price
+
+    def predict(self, agent_id, contexts):
+        bids = []
+        for context in contexts:
+            agent = self.agents[agent_id]
+            bid, item = agent.bid(context)
+            bids.append(bid)
+        return np.array(bids)
 
     def clear_revenue(self):
         self.revenue = 0.0

@@ -1,0 +1,670 @@
+WARNING:tensorflow:From /Users/keithwu/opt/anaconda3/envs/auction-gym/lib/python3.10/site-packages/tensorflow/python/compat/v2_compat.py:107: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> reading from ../UTree_model_numpy/DR_L/agent_0/model_boost_linear_save_1000_max_hist_10000_max_depth_20_min_split_instances_50_linear_epoch_decay_lr/, starting at 4
+../../data_DR_L_split_1000/agent_0/train/4.csv
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> =============== update starts ===============
+lr: 0.08691897033732895
+(average_diff:0.009838353573965904, max_diff:0.04138752363006759, training_epochs:124, lr:0.08691897033732895)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 88
+train linear regression time:  0.06263845897046849
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=2.8080610001475644e-05, d = 0, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=5.556005472038677e-05, d = 1, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> Will be split, p=5.556005472038677e-05, d=1, back=0
+lr: 0.09050069111037252
+(average_diff:0.009410479294760863, max_diff:0.03541800705481868, training_epochs:100, lr:0.09050069111037252)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 128
+train linear regression time:  0.059512667008675635
+lr: 0.09599582255815275
+(average_diff:0.007389586925611101, max_diff:0.02199439077080123, training_epochs:50, lr:0.09599582255815275)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 129
+train linear regression time:  0.0563928330084309
+lr: 0.09248310517320504
+(average_diff:0.00734450459687101, max_diff:0.017108738935165735, training_epochs:50, lr:0.09248310517320504)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 89
+train linear regression time:  0.06751166703179479
+lr: 0.08668567368651608
+(average_diff:0.018952828184476245, max_diff:0.3059337537051321, training_epochs:100, lr:0.08668567368651608)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 49
+train linear regression time:  0.06243591697420925
+lr: 0.087189053764689
+(average_diff:0.007972091080500792, max_diff:0.028535594752805538, training_epochs:120, lr:0.087189053764689)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 90
+train linear regression time:  0.06527199997799471
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=9.167422931798878e-06, d = 0, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.00047620864886300916, d = 0, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> Will be split, p=0.00047620864886300916, d=0, back=0
+lr: 0.09050069111037252
+(average_diff:0.008099571216422255, max_diff:0.02691710265630487, training_epochs:100, lr:0.09050069111037252)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 130
+train linear regression time:  0.06589687499217689
+lr: 0.09629411049999251
+(average_diff:0.006675071835959903, max_diff:0.01501763395399247, training_epochs:50, lr:0.09629411049999251)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 131
+train linear regression time:  0.06213925004703924
+lr: 0.09378333333452424
+(average_diff:0.032399238195013336, max_diff:0.25777983987768804, training_epochs:50, lr:0.09378333333452424)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 91
+train linear regression time:  0.060979582951404154
+lr: 0.08810917485798801
+(average_diff:0.012797141059635975, max_diff:0.034556715840720176, training_epochs:79, lr:0.08810917485798801)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 51
+train linear regression time:  0.06638745800592005
+lr: 0.08564745515278349
+(average_diff:0.019490437944021388, max_diff:0.4434365121830218, training_epochs:143, lr:0.08564745515278349)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 92
+train linear regression time:  0.07782870798837394
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.001743651002087601, d = 0, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> Will be split, p=0.001743651002087601, d=0, back=0
+lr: 0.09050069111037252
+(average_diff:0.020276003477187037, max_diff:0.43550091412529385, training_epochs:100, lr:0.09050069111037252)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 132
+train linear regression time:  0.06829566601663828
+lr: 0.09459152444507211
+(average_diff:0.017333971602394093, max_diff:0.09968860235155497, training_epochs:50, lr:0.09459152444507211)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 133
+train linear regression time:  0.07329400000162423
+lr: 0.09349282296650718
+(average_diff:0.013206753796787157, max_diff:0.03355161419366737, training_epochs:50, lr:0.09349282296650718)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 93
+train linear regression time:  0.0859372919658199
+lr: 0.08729290762631356
+(average_diff:0.017602383233501558, max_diff:0.04434653477618394, training_epochs:91, lr:0.08729290762631356)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 53
+train linear regression time:  0.07786120899254456
+lr: 0.0860469637699134
+(average_diff:0.02318636129970634, max_diff:0.31657971408886354, training_epochs:137, lr:0.0860469637699134)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 94
+train linear regression time:  0.07620341703295708
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.0013136962591868348, d = 0, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> Will be split, p=0.0013136962591868348, d=0, back=0
+lr: 0.09050069111037252
+(average_diff:0.016506141984356182, max_diff:0.2876122373992501, training_epochs:100, lr:0.09050069111037252)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 134
+train linear regression time:  0.09893629199359566
+lr: 0.09503275330652337
+(average_diff:0.03703373810881576, max_diff:0.16736614667803423, training_epochs:50, lr:0.09503275330652337)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 135
+train linear regression time:  0.07222054101293907
+lr: 0.09198234300535053
+(average_diff:0.02441918162471075, max_diff:0.1340551030661361, training_epochs:51, lr:0.09198234300535053)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 95
+train linear regression time:  0.0751806249609217
+lr: 0.08955605192883298
+(average_diff:0.026230732220949158, max_diff:0.11353607556285983, training_epochs:58, lr:0.08955605192883298)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 55
+train linear regression time:  0.0810771249816753
+lr: 0.08732441002704158
+(average_diff:0.025939447693349778, max_diff:0.25756989653342877, training_epochs:118, lr:0.08732441002704158)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 96
+train linear regression time:  0.08260437496937811
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.0013841435988563894, d = 0, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> Will be split, p=0.0013841435988563894, d=0, back=0
+lr: 0.09050069111037252
+(average_diff:0.019001743861827004, max_diff:0.11759057988888932, training_epochs:100, lr:0.09050069111037252)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 136
+train linear regression time:  0.08219454204663634
+lr: 0.09644360186755596
+(average_diff:0.053697166171291985, max_diff:0.1711731939672064, training_epochs:50, lr:0.09644360186755596)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 137
+train linear regression time:  0.0810551670147106
+lr: 0.09291449916371787
+(average_diff:0.05332925083962117, max_diff:0.3159242912350274, training_epochs:50, lr:0.09291449916371787)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 97
+train linear regression time:  0.06765224999981001
+lr: 0.08729290762631356
+(average_diff:0.030600222876164204, max_diff:0.23028982282745702, training_epochs:91, lr:0.08729290762631356)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 57
+train linear regression time:  0.07563899998785928
+lr: 0.08685158030544149
+(average_diff:0.03471294932957122, max_diff:0.18718406513861782, training_epochs:125, lr:0.08685158030544149)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 98
+train linear regression time:  0.08023162500467151
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.0011060373252317545, d = 0, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> Will be split, p=0.0011060373252317545, d=0, back=0
+lr: 0.09050069111037252
+(average_diff:0.029897082063219928, max_diff:0.15732645397259026, training_epochs:100, lr:0.09050069111037252)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 138
+train linear regression time:  0.07312937499955297
+lr: 0.09592139505955088
+(average_diff:0.04093874843966785, max_diff:0.20204990657813107, training_epochs:50, lr:0.09592139505955088)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 139
+train linear regression time:  0.07086916698608547
+lr: 0.09342033609400387
+(average_diff:0.02623293686665803, max_diff:0.09577486291705711, training_epochs:50, lr:0.09342033609400387)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 99
+train linear regression time:  0.07690241700038314
+lr: 0.08852016634093608
+(average_diff:0.048406365772163784, max_diff:0.2847926221419014, training_epochs:73, lr:0.08852016634093608)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 59
+train linear regression time:  0.09591212501982227
+lr: 0.08725670564958017
+(average_diff:0.03255487188810462, max_diff:0.35019158511897736, training_epochs:119, lr:0.08725670564958017)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 100
+train linear regression time:  0.08523250004509464
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.003717301848049653, d = 0, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> Will be split, p=0.003717301848049653, d=0, back=0
+lr: 0.09050069111037252
+(average_diff:0.03457116480886072, max_diff:0.3500825940159457, training_epochs:100, lr:0.09050069111037252)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 140
+train linear regression time:  0.0730908329715021
+lr: 0.0963688271966185
+(average_diff:0.019014686527295915, max_diff:0.06861546007498237, training_epochs:50, lr:0.0963688271966185)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 141
+train linear regression time:  0.08438087499234825
+lr: 0.09262668016234063
+(average_diff:0.031736697100699054, max_diff:0.1259333428296066, training_epochs:50, lr:0.09262668016234063)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 101
+train linear regression time:  0.08985499996924773
+lr: 0.08824595955827774
+(average_diff:0.04397535466866135, max_diff:0.1786402265043118, training_epochs:77, lr:0.08824595955827774)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 61
+train linear regression time:  0.09166779101360589
+lr: 0.08631433761015461
+(average_diff:0.03709344703797485, max_diff:0.13064384582059296, training_epochs:133, lr:0.08631433761015461)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 102
+train linear regression time:  0.07984662498347461
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.00022572365510442182, d = 0, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.0004524155082751124, d = 0, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.000455295684132476, d = 1, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.0006167526800690245, d = 3, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> Will be split, p=0.0006167526800690245, d=3, back=0
+lr: 0.09050069111037252
+(average_diff:0.03633393332133774, max_diff:0.11491600938001217, training_epochs:100, lr:0.09050069111037252)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 142
+train linear regression time:  0.08569724997505546
+lr: 0.09532804870204953
+(average_diff:0.03559070501654502, max_diff:0.11185647579541497, training_epochs:50, lr:0.09532804870204953)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 143
+train linear regression time:  0.07060383399948478
+lr: 0.09176856153942568
+(average_diff:0.05179472457773394, max_diff:0.12578947781131972, training_epochs:54, lr:0.09176856153942568)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 103
+train linear regression time:  0.06869787495816126
+lr: 0.0888641233149276
+(average_diff:0.025626517208950376, max_diff:0.07916157238831295, training_epochs:68, lr:0.0888641233149276)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 63
+train linear regression time:  0.0793338330113329
+lr: 0.0867842425224058
+(average_diff:0.04309611769170214, max_diff:0.2557670170335239, training_epochs:126, lr:0.0867842425224058)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 104
+train linear regression time:  0.07316620805067942
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=1.671667674863625e-05, d = 0, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.0004733405049313572, d = 1, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.0010920297365489737, d = 2, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> Will be split, p=0.0010920297365489737, d=2, back=0
+lr: 0.09050069111037252
+(average_diff:0.03286436523773131, max_diff:0.15027005200094348, training_epochs:100, lr:0.09050069111037252)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 144
+train linear regression time:  0.07333666703198105
+lr: 0.09584702526609078
+(average_diff:0.0518342661707046, max_diff:0.15265435328002175, training_epochs:50, lr:0.09584702526609078)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 145
+train linear regression time:  0.07147295802133158
+lr: 0.09305874386855324
+(average_diff:0.036102441883188834, max_diff:0.08997378916078316, training_epochs:50, lr:0.09305874386855324)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 105
+train linear regression time:  0.07754120900062844
+lr: 0.08838295660937273
+(average_diff:0.04702202543206722, max_diff:0.1834979956747569, training_epochs:75, lr:0.08838295660937273)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 65
+train linear regression time:  0.08925591601291671
+lr: 0.08725670564958017
+(average_diff:0.023877039881564383, max_diff:0.16821879456696695, training_epochs:119, lr:0.08725670564958017)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 106
+train linear regression time:  0.07556158403167501
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.0006568251654972624, d = 0, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.0007504675805100384, d = 1, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> Will be split, p=0.0007504675805100384, d=1, back=0
+lr: 0.09050069111037252
+(average_diff:0.024948782282858156, max_diff:0.16628288775431488, training_epochs:100, lr:0.09050069111037252)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 146
+train linear regression time:  0.090884167002514
+lr: 0.0963688271966185
+(average_diff:0.017627383484784858, max_diff:0.10044449625174151, training_epochs:50, lr:0.0963688271966185)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 147
+train linear regression time:  0.08305674995062873
+lr: 0.09269855121992895
+(average_diff:0.05864713044005, max_diff:0.23856999593303052, training_epochs:50, lr:0.09269855121992895)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 107
+train linear regression time:  0.09781029197620228
+lr: 0.08608266383625428
+(average_diff:0.04778278981674003, max_diff:0.31904274053033244, training_epochs:109, lr:0.08608266383625428)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 67
+train linear regression time:  0.07681337505346164
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.010725103468372464, d = 0, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> Will be split, p=0.010725103468372464, d=0, back=0
+lr: 0.09050069111037252
+(average_diff:0.04868365055288443, max_diff:0.3268444466082754, training_epochs:100, lr:0.09050069111037252)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 148
+train linear regression time:  0.0835923749837093
+lr: 0.0971191901838224
+(average_diff:0.013498495265953793, max_diff:0.030192383156850522, training_epochs:50, lr:0.0971191901838224)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 149
+train linear regression time:  0.07399654196342453
+lr: 0.08691897033732895
+(average_diff:0.029902293687876558, max_diff:0.19987181046615363, training_epochs:124, lr:0.08691897033732895)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 108
+train linear regression time:  0.08511225000256673
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.0017796823855374506, d = 0, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.0018117265871758256, d = 3, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> Will be split, p=0.0018117265871758256, d=3, back=0
+lr: 0.09050069111037252
+(average_diff:0.027662782731262322, max_diff:0.2096335319229631, training_epochs:100, lr:0.09050069111037252)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 150
+train linear regression time:  0.07884533295873553
+lr: 0.09599582255815275
+(average_diff:0.02961114575150764, max_diff:0.0862859063174985, training_epochs:50, lr:0.09599582255815275)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 151
+train linear regression time:  0.07048200001008809
+lr: 0.09241140115528484
+(average_diff:0.04165521146803919, max_diff:0.23206072775198022, training_epochs:50, lr:0.09241140115528484)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 109
+train linear regression time:  0.06662541697733104
+lr: 0.08763209592203396
+(average_diff:0.04595573942902184, max_diff:0.16608255657275245, training_epochs:86, lr:0.08763209592203396)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 69
+train linear regression time:  0.07904641702771187
+lr: 0.08664972354088282
+(average_diff:0.04091861926919228, max_diff:0.1895630161587668, training_epochs:128, lr:0.08664972354088282)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 110
+train linear regression time:  0.08492970798397437
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.005489514658982519, d = 0, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> Will be split, p=0.005489514658982519, d=0, back=0
+lr: 0.09050069111037252
+(average_diff:0.03657042358867634, max_diff:0.10182083991825736, training_epochs:100, lr:0.09050069111037252)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 152
+train linear regression time:  0.07207712501985952
+lr: 0.09569845861567065
+(average_diff:0.03024963105895709, max_diff:0.08600326601444241, training_epochs:50, lr:0.09569845861567065)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 153
+train linear regression time:  0.07477762503549457
+lr: 0.09371062122346957
+(average_diff:0.025589244142457016, max_diff:0.09814575005843162, training_epochs:50, lr:0.09371062122346957)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 111
+train linear regression time:  0.06906599999638274
+lr: 0.08948661731436647
+(average_diff:0.017959598836089878, max_diff:0.06817135964512955, training_epochs:59, lr:0.08948661731436647)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 71
+train linear regression time:  0.08096758299507201
+lr: 0.08811653528823431
+(average_diff:0.019615138691205642, max_diff:0.06221121652426864, training_epochs:52, lr:0.08811653528823431)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 35
+train linear regression time:  0.08626204199390486
+lr: 0.08611372948231472
+(average_diff:0.03272645215992215, max_diff:0.27032098282896255, training_epochs:136, lr:0.08611372948231472)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 112
+train linear regression time:  0.07793583301827312
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.0007254712478428054, d = 0, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.0016631429673276896, d = 1, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> Will be split, p=0.0016631429673276896, d=1, back=0
+lr: 0.09050069111037252
+(average_diff:0.03480675583048462, max_diff:0.2712620116733827, training_epochs:100, lr:0.09050069111037252)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 154
+train linear regression time:  0.07504362502368167
+lr: 0.09510649128864364
+(average_diff:0.02456913267342796, max_diff:0.08143541954051861, training_epochs:50, lr:0.09510649128864364)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 155
+train linear regression time:  0.0766553750145249
+lr: 0.09284246067733049
+(average_diff:0.04485348538986929, max_diff:0.2962551346270136, training_epochs:50, lr:0.09284246067733049)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 113
+train linear regression time:  0.08015150000574067
+lr: 0.08797260217935148
+(average_diff:0.039265536383605755, max_diff:0.21663744651249822, training_epochs:81, lr:0.08797260217935148)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 73
+train linear regression time:  0.07854875002522022
+lr: 0.08624741636222312
+(average_diff:0.05238825727790082, max_diff:0.28588567386302105, training_epochs:134, lr:0.08624741636222312)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 114
+train linear regression time:  0.06918983400100842
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.00208462129087637, d = 0, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.003197687743680189, d = 1, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> Will be split, p=0.003197687743680189, d=1, back=0
+lr: 0.09050069111037252
+(average_diff:0.052651587970327596, max_diff:0.26539322324054826, training_epochs:100, lr:0.09050069111037252)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 156
+train linear regression time:  0.09385091700823978
+lr: 0.0952541389419952
+(average_diff:0.048471492874099804, max_diff:0.1026865859117182, training_epochs:50, lr:0.0952541389419952)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 157
+train linear regression time:  0.07757420896086842
+lr: 0.09248310517320504
+(average_diff:0.05066672738606118, max_diff:0.19163092112592767, training_epochs:50, lr:0.09248310517320504)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 115
+train linear regression time:  0.07271216699155048
+lr: 0.09067436137671753
+(average_diff:0.03745004222910332, max_diff:0.18607972607687798, training_epochs:50, lr:0.09067436137671753)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 75
+train linear regression time:  0.06901200005086139
+lr: 0.08705390730985475
+(average_diff:0.03197933633576657, max_diff:0.2238199517026626, training_epochs:122, lr:0.08705390730985475)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 116
+train linear regression time:  0.07504712499212474
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.006324451450889354, d = 0, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> Will be split, p=0.006324451450889354, d=0, back=0
+lr: 0.09050069111037252
+(average_diff:0.029110492137521832, max_diff:0.22200648727341082, training_epochs:100, lr:0.09050069111037252)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 158
+train linear regression time:  0.08464591699885204
+lr: 0.09614485084991518
+(average_diff:0.02643990006657241, max_diff:0.06025606750660367, training_epochs:50, lr:0.09614485084991518)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 159
+train linear regression time:  0.08479004102991894
+lr: 0.09305874386855324
+(average_diff:0.026677967852624756, max_diff:0.08361482985534113, training_epochs:50, lr:0.09305874386855324)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 117
+train linear regression time:  0.10342216596473008
+lr: 0.08763209592203396
+(average_diff:0.02642056912749814, max_diff:0.22790082759218672, training_epochs:86, lr:0.08763209592203396)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 77
+train linear regression time:  0.08057191601255909
+lr: 0.08712145433166953
+(average_diff:0.025622488343166317, max_diff:0.12193967241586151, training_epochs:121, lr:0.08712145433166953)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 118
+train linear regression time:  0.10604041698388755
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.004109229102462869, d = 0, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.004222320747724568, d = 1, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> Will be split, p=0.004222320747724568, d=1, back=0
+lr: 0.09050069111037252
+(average_diff:0.0276378165619406, max_diff:0.12037577686825723, training_epochs:100, lr:0.09050069111037252)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 160
+train linear regression time:  0.13509616599185392
+lr: 0.09621945173272933
+(average_diff:0.01568422374353372, max_diff:0.04903337928981649, training_epochs:50, lr:0.09621945173272933)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 161
+train linear regression time:  0.09407970798201859
+lr: 0.09205371410771175
+(average_diff:0.01770714362084338, max_diff:0.05007038499288774, training_epochs:50, lr:0.09205371410771175)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 119
+train linear regression time:  0.07345249998616055
+lr: 0.08797260217935148
+(average_diff:0.019379738938837515, max_diff:0.06626559619745431, training_epochs:81, lr:0.08797260217935148)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 79
+train linear regression time:  0.0782868749811314
+lr: 0.08942470623655564
+(average_diff:0.020289347688478704, max_diff:0.07107423014136227, training_epochs:50, lr:0.08942470623655564)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 39
+train linear regression time:  0.060333624947816133
+lr: 0.08705390730985475
+(average_diff:0.035558025832907514, max_diff:0.14072924644763452, training_epochs:122, lr:0.08705390730985475)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 120
+train linear regression time:  0.17777079105144367
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.004863760046610401, d = 0, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.005440192202264123, d = 2, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.0058395455206166754, d = 3, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> Will be split, p=0.0058395455206166754, d=3, back=0
+lr: 0.09050069111037252
+(average_diff:0.03752284856881282, max_diff:0.12400878526283837, training_epochs:100, lr:0.09050069111037252)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 162
+train linear regression time:  0.08937800000421703
+lr: 0.09614485084991518
+(average_diff:0.014756205614450154, max_diff:0.03458829548736558, training_epochs:50, lr:0.09614485084991518)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 163
+train linear regression time:  0.07396975002484396
+lr: 0.09284246067733049
+(average_diff:0.03614915138207421, max_diff:0.12056532942954787, training_epochs:50, lr:0.09284246067733049)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 121
+train linear regression time:  0.07079491601325572
+lr: 0.08962554041912843
+(average_diff:0.01938654655246909, max_diff:0.09202931834704553, training_epochs:57, lr:0.08962554041912843)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 81
+train linear regression time:  0.07817891601007432
+lr: 0.08691897033732895
+(average_diff:0.023955115563170353, max_diff:0.11735597267037651, training_epochs:124, lr:0.08691897033732895)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 122
+train linear regression time:  0.07161404198268428
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.0022078087584320692, d = 0, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> Will be split, p=0.0022078087584320692, d=0, back=0
+lr: 0.09050069111037252
+(average_diff:0.024911889375707208, max_diff:0.11090768358211489, training_epochs:100, lr:0.09050069111037252)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 164
+train linear regression time:  0.07088904199190438
+lr: 0.09599582255815275
+(average_diff:0.010163555942782584, max_diff:0.03568811031020003, training_epochs:50, lr:0.09599582255815275)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 165
+train linear regression time:  0.0689722920069471
+lr: 0.09255486482783373
+(average_diff:0.027734092977875408, max_diff:0.07730722861708955, training_epochs:50, lr:0.09255486482783373)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 123
+train linear regression time:  0.06979820801643655
+lr: 0.08907113868306354
+(average_diff:0.016310342928192206, max_diff:0.06590576110107246, training_epochs:65, lr:0.08907113868306354)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 83
+train linear regression time:  0.0724589999881573
+lr: 0.08998130866824842
+(average_diff:0.015515804859583298, max_diff:0.039086489610956954, training_epochs:50, lr:0.08998130866824842)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 43
+train linear regression time:  0.07112362503539771
+lr: 0.08725670564958017
+(average_diff:0.03751443358062141, max_diff:0.21162576345209547, training_epochs:119, lr:0.08725670564958017)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 124
+train linear regression time:  0.0806322920252569
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.001846961950745676, d = 0, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.004220079584490619, d = 1, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.005174398239888738, d = 2, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.00978060883625012, d = 3, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> Will be split, p=0.00978060883625012, d=3, back=0
+lr: 0.09050069111037252
+(average_diff:0.035665398658471535, max_diff:0.22709329283013943, training_epochs:100, lr:0.09050069111037252)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 166
+train linear regression time:  0.07245966698974371
+lr: 0.0963688271966185
+(average_diff:0.0159955047398532, max_diff:0.05615644904755923, training_epochs:50, lr:0.0963688271966185)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 167
+train linear regression time:  0.06445079197874293
+lr: 0.09155527693532975
+(average_diff:0.05670346292868022, max_diff:0.2734929746723985, training_epochs:57, lr:0.09155527693532975)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 125
+train linear regression time:  0.06839312496595085
+lr: 0.08641714956747408
+(average_diff:0.032876191922275595, max_diff:0.12152978043385387, training_epochs:104, lr:0.08641714956747408)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 85
+train linear regression time:  0.0748598329955712
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.0057502049329472, d = 0, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> Will be split, p=0.0057502049329472, d=0, back=0
+lr: 0.09050069111037252
+(average_diff:0.03075377972454273, max_diff:0.11910787146297297, training_epochs:100, lr:0.09050069111037252)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 168
+train linear regression time:  0.08477995899738744
+lr: 0.09749655981780471
+(average_diff:0.01236463776174239, max_diff:0.020791656417929738, training_epochs:50, lr:0.09749655981780471)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 169
+train linear regression time:  0.07332749996567145
+lr: 0.08685158030544149
+(average_diff:0.03386308614774457, max_diff:0.10147843155746744, training_epochs:125, lr:0.08685158030544149)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 126
+train linear regression time:  0.06601491599576548
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.003024189705397405, d = 0, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.0037571797568930494, d = 1, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> Will be split, p=0.0037571797568930494, d=1, back=0
+lr: 0.09050069111037252
+(average_diff:0.034188298637760295, max_diff:0.1060170460801319, training_epochs:100, lr:0.09050069111037252)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 170
+train linear regression time:  0.06942470802459866
+lr: 0.09592139505955088
+(average_diff:0.02149480936111641, max_diff:0.07150850478007142, training_epochs:50, lr:0.09592139505955088)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 171
+train linear regression time:  0.07586466695647687
+lr: 0.09219662249057965
+(average_diff:0.017256950125373118, max_diff:0.04875568597981139, training_epochs:50, lr:0.09219662249057965)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 127
+train linear regression time:  0.07937695796135813
+lr: 0.0888641233149276
+(average_diff:0.017398921332258708, max_diff:0.07039954453785474, training_epochs:68, lr:0.0888641233149276)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 87
+train linear regression time:  0.07802454195916653
+testFringe time:  8.911052750016097
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> =============== update finished ===============
+
+*** Writing Game File 5***
+
+<_io.TextIOWrapper name='../print_tree_record_numpy/print_DR_L_agent_0_boost_linear_tree_split_1000_max_hist_10000_max_depth_20_min_split_instances_50_linear_epoch_decay_lr.txt' mode='w' encoding='UTF-8'> idx1(Q:0.3120, distinct_name:2, dictinctin_value:-1.295219320585971, par:None)
+	idx4(Q:0.5132, distinct_name:2, dictinctin_value:-1.6419765861547406, par:1)
+		idx22(Q:0.5472, distinct_name:0, dictinctin_value:0.11588307585722928, par:4)
+			idx48(Q:0.5628, distinct_name:2, dictinctin_value:-1.752265828617388, par:22)
+				idx88(Q:0.5702, distinct_name:1, dictinctin_value:0.9002946777603823, par:48)
+					idx128(Q:0.5711, par:88)
+					idx129(Q:0.5663, par:88)
+				idx89(Q:0.5420, par:48)
+			idx49(Q:0.5210, par:22)
+		idx23(Q:0.4726, distinct_name:0, dictinctin_value:0.30247570629648024, par:4)
+			idx50(Q:0.5057, distinct_name:0, dictinctin_value:-0.10044980300716315, par:23)
+				idx90(Q:0.5162, distinct_name:0, dictinctin_value:-0.3069121225785522, par:50)
+					idx130(Q:0.5203, par:90)
+					idx131(Q:0.4953, par:90)
+				idx91(Q:0.4572, par:50)
+			idx51(Q:0.4116, par:23)
+	idx5(Q:0.2900, distinct_name:2, dictinctin_value:-0.8634579915640487, par:1)
+		idx6(Q:0.3763, distinct_name:0, dictinctin_value:0.12395957457788752, par:5)
+			idx24(Q:0.4346, distinct_name:0, dictinctin_value:-0.4694168535359878, par:6)
+				idx52(Q:0.4524, distinct_name:0, dictinctin_value:-0.5981363314442754, par:24)
+					idx92(Q:0.4582, distinct_name:0, dictinctin_value:-0.8979584959524401, par:52)
+						idx132(Q:0.4688, par:92)
+						idx133(Q:0.4336, par:92)
+					idx93(Q:0.4250, par:52)
+				idx53(Q:0.4008, par:24)
+			idx25(Q:0.3136, distinct_name:2, dictinctin_value:-0.9545609591984623, par:6)
+				idx54(Q:0.3238, distinct_name:1, dictinctin_value:0.5890963429890187, par:25)
+					idx94(Q:0.3187, distinct_name:0, dictinctin_value:1.2293742267892545, par:54)
+						idx134(Q:0.3383, par:94)
+						idx135(Q:0.2660, par:94)
+					idx95(Q:0.3375, par:54)
+				idx55(Q:0.2806, par:25)
+		idx7(Q:0.2790, distinct_name:2, dictinctin_value:-0.5555599113971874, par:5)
+			idx8(Q:0.2919, distinct_name:0, dictinctin_value:0.0633669305611551, par:7)
+				idx26(Q:0.3413, distinct_name:0, dictinctin_value:-0.46552196537394563, par:8)
+					idx56(Q:0.3687, distinct_name:2, dictinctin_value:-0.6436234262938294, par:26)
+						idx96(Q:0.3829, distinct_name:0, dictinctin_value:-0.5933993495527106, par:56)
+							idx136(Q:0.3928, par:96)
+							idx137(Q:0.3282, par:96)
+						idx97(Q:0.3243, par:56)
+					idx57(Q:0.2944, par:26)
+				idx27(Q:0.2386, distinct_name:1, dictinctin_value:0.42486651972165457, par:8)
+					idx58(Q:0.2238, distinct_name:1, dictinctin_value:0.1367758957022368, par:27)
+						idx98(Q:0.2229, distinct_name:0, dictinctin_value:1.218738536787562, par:58)
+							idx138(Q:0.2352, par:98)
+							idx139(Q:0.1737, par:98)
+						idx99(Q:0.2275, par:58)
+					idx59(Q:0.2701, par:27)
+			idx9(Q:0.2773, distinct_name:2, dictinctin_value:-0.27336263312205633, par:7)
+				idx10(Q:0.2552, distinct_name:1, dictinctin_value:0.04629347255328781, par:9)
+					idx28(Q:0.2213, distinct_name:0, dictinctin_value:0.4837456029304855, par:10)
+						idx60(Q:0.2405, distinct_name:0, dictinctin_value:-0.09721991218896704, par:28)
+							idx100(Q:0.2558, distinct_name:0, dictinctin_value:-0.2910032428179976, par:60)
+								idx140(Q:0.2634, par:100)
+								idx141(Q:0.2154, par:100)
+							idx101(Q:0.1971, par:60)
+						idx61(Q:0.1813, par:28)
+					idx29(Q:0.2868, distinct_name:3, dictinctin_value:0.6518322002928525, par:10)
+						idx62(Q:0.2742, distinct_name:1, dictinctin_value:1.2192475692208788, par:29)
+							idx102(Q:0.2421, distinct_name:3, dictinctin_value:0.1471772661906821, par:62)
+								idx142(Q:0.2481, par:102)
+								idx143(Q:0.2239, par:102)
+							idx103(Q:0.3535, par:62)
+						idx63(Q:0.3211, par:29)
+				idx11(Q:0.2809, distinct_name:1, dictinctin_value:-0.960349594584654, par:9)
+					idx12(Q:0.1660, distinct_name:3, dictinctin_value:-0.12179797081219602, par:11)
+						idx30(Q:0.1059, distinct_name:1, dictinctin_value:-1.2160175018076882, par:12)
+							idx64(Q:0.1036, distinct_name:1, dictinctin_value:-1.3452344507545615, par:30)
+								idx104(Q:0.1042, distinct_name:2, dictinctin_value:1.2193670492677695, par:64)
+									idx144(Q:0.0989, par:104)
+									idx145(Q:0.1249, par:104)
+								idx105(Q:0.1012, par:64)
+							idx65(Q:0.1111, par:30)
+						idx31(Q:0.2190, distinct_name:3, dictinctin_value:0.7847868312310631, par:12)
+							idx66(Q:0.1719, distinct_name:2, dictinctin_value:0.9898741848377776, par:31)
+								idx106(Q:0.1586, distinct_name:1, dictinctin_value:-1.070438509629726, par:66)
+									idx146(Q:0.1623, par:106)
+									idx147(Q:0.1391, par:106)
+								idx107(Q:0.2104, par:66)
+							idx67(Q:0.2882, distinct_name:0, dictinctin_value:1.4605171837414148, par:31)
+								idx148(Q:0.2835, par:67)
+								idx149(Q:0.3407, par:67)
+					idx13(Q:0.3040, distinct_name:1, dictinctin_value:0.9204044700267916, par:11)
+						idx14(Q:0.2700, distinct_name:2, dictinctin_value:0.11343843323865645, par:13)
+							idx16(Q:0.2042, distinct_name:1, dictinctin_value:-0.03788909785337727, par:14)
+								idx32(Q:0.1722, distinct_name:2, dictinctin_value:-0.018837555513189417, par:16)
+									idx68(Q:0.1788, distinct_name:3, dictinctin_value:0.7187592376099216, par:32)
+										idx108(Q:0.1616, distinct_name:3, dictinctin_value:0.3362972628773089, par:68)
+											idx150(Q:0.1607, par:108)
+											idx151(Q:0.1654, par:108)
+										idx109(Q:0.2261, par:68)
+									idx69(Q:0.1591, par:32)
+								idx33(Q:0.2350, distinct_name:3, dictinctin_value:0.9550022359093816, par:16)
+									idx34(Q:0.2061, distinct_name:0, dictinctin_value:0.6804066766801514, par:33)
+										idx70(Q:0.2105, distinct_name:0, dictinctin_value:0.29271444337669583, par:34)
+											idx110(Q:0.2223, distinct_name:0, dictinctin_value:-0.010688334486232303, par:70)
+												idx152(Q:0.2343, par:110)
+												idx153(Q:0.1794, par:110)
+											idx111(Q:0.1549, par:70)
+										idx71(Q:0.1944, par:34)
+									idx35(Q:0.3540, par:33)
+							idx17(Q:0.2931, distinct_name:1, dictinctin_value:0.3132835256087979, par:14)
+								idx18(Q:0.2554, distinct_name:3, dictinctin_value:-0.050447546695544444, par:17)
+									idx20(Q:0.1952, distinct_name:2, dictinctin_value:0.8007246209056883, par:18)
+										idx36(Q:0.1528, distinct_name:1, dictinctin_value:-0.017042867191026954, par:20)
+											idx72(Q:0.1280, distinct_name:1, dictinctin_value:-0.18908594207770477, par:36)
+												idx112(Q:0.1157, distinct_name:1, dictinctin_value:-0.3939598654273447, par:72)
+													idx154(Q:0.1063, par:112)
+													idx155(Q:0.1416, par:112)
+												idx113(Q:0.1710, par:72)
+											idx73(Q:0.2062, par:36)
+										idx37(Q:0.2446, distinct_name:2, dictinctin_value:1.7639178643281266, par:20)
+											idx74(Q:0.2215, distinct_name:1, dictinctin_value:0.05801099772452635, par:37)
+												idx114(Q:0.1972, distinct_name:1, dictinctin_value:-0.12386366946778615, par:74)
+													idx156(Q:0.1814, par:114)
+													idx157(Q:0.2436, par:114)
+												idx115(Q:0.2953, par:74)
+											idx75(Q:0.3427, par:37)
+									idx21(Q:0.3095, distinct_name:2, dictinctin_value:2.010195253060442, par:18)
+										idx38(Q:0.2977, distinct_name:3, dictinctin_value:0.6367372827779529, par:21)
+											idx40(Q:0.2332, distinct_name:2, dictinctin_value:1.0296248904359349, par:38)
+												idx76(Q:0.1812, distinct_name:0, dictinctin_value:0.6554307691987407, par:40)
+													idx116(Q:0.1902, distinct_name:0, dictinctin_value:0.26763619699177965, par:76)
+														idx158(Q:0.1996, par:116)
+														idx159(Q:0.1474, par:116)
+													idx117(Q:0.1509, par:76)
+												idx77(Q:0.3287, par:40)
+											idx41(Q:0.3601, distinct_name:3, dictinctin_value:1.3423465163078303, par:38)
+												idx78(Q:0.3262, distinct_name:2, dictinctin_value:0.9937165007920128, par:41)
+													idx118(Q:0.2881, distinct_name:1, dictinctin_value:0.07612435229562035, par:78)
+														idx160(Q:0.2759, par:118)
+														idx161(Q:0.3465, par:118)
+													idx119(Q:0.4182, par:78)
+												idx79(Q:0.4317, par:41)
+										idx39(Q:0.4880, par:21)
+								idx19(Q:0.3729, distinct_name:3, dictinctin_value:1.6471115910672842, par:17)
+									idx42(Q:0.3656, distinct_name:0, dictinctin_value:0.05645721223123974, par:19)
+										idx44(Q:0.3933, distinct_name:3, dictinctin_value:0.5911318520016184, par:42)
+											idx80(Q:0.3607, distinct_name:0, dictinctin_value:-0.23972821869458907, par:44)
+												idx120(Q:0.3764, distinct_name:3, dictinctin_value:0.1462944285688139, par:80)
+													idx162(Q:0.3654, par:120)
+													idx163(Q:0.4267, par:120)
+												idx121(Q:0.3117, par:80)
+											idx81(Q:0.4855, par:44)
+										idx45(Q:0.3396, distinct_name:3, dictinctin_value:0.4029192987743537, par:42)
+											idx82(Q:0.3062, distinct_name:2, dictinctin_value:1.2521666643435916, par:45)
+												idx122(Q:0.2787, distinct_name:0, dictinctin_value:1.5014557182304062, par:82)
+													idx164(Q:0.2703, par:122)
+													idx165(Q:0.3138, par:122)
+												idx123(Q:0.3853, par:82)
+											idx83(Q:0.4254, par:45)
+									idx43(Q:0.5040, par:19)
+						idx15(Q:0.4345, distinct_name:2, dictinctin_value:0.5873219822417945, par:13)
+							idx46(Q:0.3930, distinct_name:1, dictinctin_value:1.4147900064798922, par:15)
+								idx84(Q:0.3590, distinct_name:0, dictinctin_value:0.4439865219583468, par:46)
+									idx124(Q:0.3725, distinct_name:3, dictinctin_value:1.0321581956744241, par:84)
+										idx166(Q:0.3491, par:124)
+										idx167(Q:0.4952, par:124)
+									idx125(Q:0.3310, par:84)
+								idx85(Q:0.4505, distinct_name:0, dictinctin_value:1.9735528927552717, par:46)
+									idx168(Q:0.4505, par:85)
+									idx169(Q:0.4506, par:85)
+							idx47(Q:0.4828, distinct_name:3, dictinctin_value:0.4372143306128162, par:15)
+								idx86(Q:0.4687, distinct_name:2, dictinctin_value:1.4714914209112564, par:47)
+									idx126(Q:0.4502, distinct_name:1, dictinctin_value:1.7240383234816656, par:86)
+										idx170(Q:0.4359, par:126)
+										idx171(Q:0.5074, par:126)
+									idx127(Q:0.5168, par:86)
+								idx87(Q:0.5187, par:47)

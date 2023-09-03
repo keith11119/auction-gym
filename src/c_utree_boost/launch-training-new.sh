@@ -5,10 +5,10 @@ t_paras=('DR')
 c_paras=('L')
 s_paras=(1000)
 a_paras=(0 1 2)
-p_paras=(20)
+p_paras=(10 20 35)
 i_paras=(50)
-o_paras=(11 13 15)
-special='_contexts'
+o_paras=(5)
+special=''
 
 MAX_PROCESSES=10
 
@@ -20,10 +20,10 @@ function run_game {
   i=$5
   o=$6
   a=$7
-  for ((n=0;n<54;n++))
+  for ((n=20;n<60;n++))
   do
     echo running game $n with parameters -t $t -c $c -s $s -p $p -i $i -o $o -a $a
-    python train_boost_Galen.py -g $n -t $t -c $c -o $a -a $a -s $s -m 10000 -p $p -i $i -e '' -x $special -d "../../data_${t}_${c}_split_${s}_${o}${special}/agent_${a}/train/" > ../training_numpy_tempt_out_dir/${t}_${c}_${o}${special}/agent_${a}/split_${s}/max_hist_10000_max_depth_${p}_min_split_instances_${i}/temp-$n.out 2>&1
+    python train_boost_Galen.py -g $n -t $t -c $c -o $o -a $a -s $s -m 10000 -p $p -i $i -e '_linear_epoch_decay_lr' -d "../../data_${t}_${c}_split_${s}${special}/agent_${a}/train/" > ../training_numpy_tempt_out_dir/${t}_${c}${special}/agent_${a}/split_${s}/max_hist_10000_max_depth_${p}_min_split_instances_${i}_linear_epoch_decay_lr/temp-$n.out 2>&1
     echo finishing game $n
     sleep 20s
   done

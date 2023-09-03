@@ -1,61 +1,22 @@
-## AuctionGym: Simulating Online Advertising Auctions
+## Introduction
 
-This repository contains the source code for AuctionGym: a simulation environment that enables reproducible offline evaluation of bandit and reinforcement learning approaches to ad allocation and bidding in online advertising auctions.
-A [research paper](https://www.amazon.science/publications/learning-to-bid-with-auctiongym) accompanying this repository was accepted as a contribution to the [AdKDD '22 workshop](https://www.adkdd.org/), co-located with the [2022 ACM SIGKDD Conference](https://kdd.org/kdd2022/index.html), and received a Best Paper Award.
+This project is based on AuctionGym by [Olivier Jeunen](https://github.com/amzn/auction-gym) with approaches in his [research paper](https://www.amazon.science/publications/learning-to-bid-with-auctiongym). Utilizing his work in simulating auctions, I am able to create different scenarios to test models' limits. The focus of this paper to to train tree based 
+surroagte models to predict the optimal bid for a given auction. The models are trained based on a black box approach Doubly Robust Estimator. There is also a modified implementation
+of Linear Model U Tree (LMUT) in src/c_utree_boost that allows the usage of LMUT to action space. The original implementation of LMUT comes from (https://github.com/Guiliang/uTree_mimic_mountain_car)
 
-Offline evaluation of "learning to bid" approaches is not straightforward, because of multiple reasons:
-(1) observational data suffers from unobserved confounding and experimental data with broad interventions is costly to obtain,
-(2) offline experiments suffer from Goodhart's Law: " *when a measure becomes a target, it ceases to be a good measure* ", and 
-(3) at the time of writing and to the best of our knowledge -- there are no publicly available datasets to researchers that can be used for this purpose.
-As a result, reliable and reproducible validation of novel "learning to bid" methods is hindered, and so is open scientific progress in this field.
+## Work
 
-AuctionGym aims to mitigate this problem, by providing a unified framework that practitioners and research can use to benchmark novel methods and gain insights into their inner workings.
-
-
-## Getting Started
-
-We provide two introductory and exploratory notebooks. To open them, run `jupyter notebook` in the main directory and navigate to `src`.
-
-" *Getting Started with AuctionGym (1. Effects of Competition)* " simulates second-price auctions with varying levels of competition, visualising the effects on advertiser welfare and surplus, and revenue for the auctioneer.
-Analogosuly, " *Getting Started with AuctionGym (2. Effects of Bid Shading)* " simulates first-price auctions where bidders bid truthfully vs. when they shade their bids in a value-based manner.
-
+For the usage of LMUT, necessary pathes has to be recreated to storage models and training data. However, the training records are provided in training_numpy_tempt_out_dir/
+There are also some changes in AuctionGym environment for creating a surrogate bidder to join the bidding process. The changes are in Bidder.py.
 
 ## Reproducing Research Results
 
-This section provides instructions to reproduce the results reported in our AdKDD paper.
+Different secenarios are created based on their configure files in config/ . There are jupter notebooks to recreate experiments in my paper. They follow this naming pattern: 
+ {estimator}_{competition}__{scenario}_new.ipynb. For example, DR_L_7_contexts.ipynb is the notebook to recreate the results for DR estimator in low competition mode with 7 contexts.
+The only difference is the Gamma Prediction experiment and New Competition Added scenario. They are utilising the same data and config as DR_L.ipynb. So, the results are put in the same notebook.
 
-We provide a script that takes as input a configuration file detailing the environment and bidders (in JSON format), and outputs raw logged metrics over repeated auction rounds in .csv-files, along with visualisations.
-To reproduce the results for truthful bidders in a second-price auction reported in Fig. 1 in the paper, run:
-
+Although the data is not included in this repo, the pickle file helps in recreating the data for surrogate model training, validation and testing .
 ```
-python src/main.py config/SP_Oracle.json
-```
-
-A `results`-directory will be created, with a subdirectory per configuration file that was ran. This subdirectory will contain .csv-files with raw metrics, and .pdf-files with general visualisations.
-Other configuration files will generate results for other environments, and other bidder behaviour.
-See [configuration](CONFIG.md) for more detail on the structure of the configuration files.
-
-
-
-## Citing
-
-
-Please cite the [accompanying research paper](https://www.amazon.science/publications/learning-to-bid-with-auctiongym) if you use AuctionGym in your work:
-
-```BibTeX
-    @inproceedings{Jeunen2022_AuctionGym,
-      author = {Jeunen, Olivier and Murphy, Sean and Allison, Ben},
-      title = {Learning to Bid with AuctionGym},
-      booktitle = {Proc. of the AdKDD Workshop at the 28th ACM SIGKDD Conference on Knowledge Discovery \& Data Mining},
-      series = {AdKDD '22},
-      year = {2022}
-    }
-```
-
-
-## Security
-
-See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
 
 ## License
 

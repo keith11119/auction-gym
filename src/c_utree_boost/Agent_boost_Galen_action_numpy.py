@@ -25,6 +25,8 @@ class CUTreeAgent:
                                     training_mode=training_mode)
         self.problem = problem
         # self.TREE_PATH = './csv_oracle_linear_qsplit_test/'
+        if int(num_contexts) != 5:
+            special = '_'+str(num_contexts)+'_contexts'
         estimator_path = f'../UTree_model_numpy/{problem.estimator_type}_{problem.competition}{special}/'
         if not os.path.exists(estimator_path):
             os.makedirs(estimator_path)
@@ -36,7 +38,7 @@ class CUTreeAgent:
             os.makedirs(self.SAVE_PATH)
         self.PRINT_TREE_PATH = f'../print_tree_record_numpy/print_{problem.estimator_type}_{problem.competition}{special}_agent_{problem.agent_num}_boost_linear_tree_split_{problem.split_size}_max_hist_{max_hist}_max_depth_{max_depth}_min_split_instances_{min_split_instances}{training_mode}.txt'
         self.training_mode = training_mode
-        self.num_contexts = num_contexts
+        self.num_contexts = int(num_contexts)
         # print(tf.__version__)
 
     def update(self, currentObs, qValue, check_fringe=0, beginflag=False):
@@ -119,22 +121,43 @@ class CUTreeAgent:
 
         return zip(q_home.tolist(), q_away.tolist(), q_end.tolist())
 
+    def predict(self, input, utree):
 
-    def get_prediction(self, save_path, game_path, read_game_number, data_set = 'test'):
+        prediction_results = []
+        game_record = input
+        event_number = len(game_record)
+        # utree = pickle.load(open(utree_save_path + 'pickle_Game_File_' + str(read_game_number) + '.p', 'rb'))
+
+        for index in range(0, event_number):
+
+            currentObs = game_record[index]
+
+            inst = C_UTree.Instance(-1, currentObs, None)
+            node = utree.getAbsInstanceLeaf(inst)
+
+            value = currentObs @ node.weight + node.bias
+
+            prediction_results.append(value[0])
+            # print(sys.stderr, f"finish index: {index} - {value}")
+
+        return np.array(prediction_results)
+
+    def get_prediction(self, save_path, game_path, read_game_number, data_set = 'test', agent_num = None):
         print(sys.stderr, 'starting from {0}'.format(read_game_number))
         self.utree = pickle.load(open(save_path + 'pickle_Game_File_' + str(read_game_number) + '.p', 'rb'))
         print(sys.stderr, 'finishing read tree')
 
         # game_testing_record_dict = {}
         prediction_results = []
-        game_record = self.read_csv_game_record_auction(f"{game_path}{data_set}_{self.problem.agent_num}.csv")
+        if agent_num is None:
+            agent_num = self.problem.agent_num
+        game_record = self.read_csv_game_record_auction(f"{game_path}{data_set}_{agent_num}.csv")
         event_number = len(game_record)
 
         for index in range(0, event_number):
 
             transition = game_record[index]
             currentObs = transition[:self.num_contexts]
-            qValue = float(transition[self.num_contexts+2])
 
             inst = C_UTree.Instance(-1, currentObs, None)
             node = self.utree.getAbsInstanceLeaf(inst)
@@ -317,6 +340,7 @@ class CUTreeAgent:
             self.read_Utree(game_number=start_game, save_path=self.SAVE_PATH)
         count = 0
 
+        print(f"{self.problem.games_directory}{game_number}.csv")
         game_record = self.read_csv_game_record_auction(f"{self.problem.games_directory}{game_number}.csv")
         event_number = len(game_record)
         beginflag = True
@@ -325,6 +349,7 @@ class CUTreeAgent:
 
             if self.problem.isEpisodic:
                 transition = game_record[index]
+                #print(type(self.num_contexts))
                 currentObs = transition[:self.num_contexts]
                 # nextObs = transition.get('newObservation').split('$')
                 # reward = float(transition.get('reward'))

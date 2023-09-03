@@ -1,0 +1,39 @@
+WARNING:tensorflow:From /Users/keithwu/opt/anaconda3/envs/auction-gym/lib/python3.10/site-packages/tensorflow/python/compat/v2_compat.py:107: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> reading from ../UTree_model_numpy/DR/model_boost_linear_qsplit_noabs_save/, starting at 2
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> =============== update starts ===============
+(average_diff:0.1939283332575614, max_diff:0.6779782043279833, training_epochs:500, lr:0.05)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 8
+train linear regression time:  0.06464895885437727
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> variance test passed, diff=0.04323031351937512, d = 0, back=0
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> Will be split, p=0.04323031351937512, d=0, back=0
+(average_diff:0.21043523617451423, max_diff:0.6979613297174545, training_epochs:500, lr:0.05)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 10
+train linear regression time:  0.05842145811766386
+(average_diff:0.14969298194040725, max_diff:0.4197064909950474, training_epochs:500, lr:0.05)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 11
+train linear regression time:  0.0504913330078125
+(average_diff:0.16573402466121995, max_diff:0.6836959863728055, training_epochs:500, lr:0.05)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 9
+train linear regression time:  0.06254620803520083
+(average_diff:2.220446049250313e-16, max_diff:2.220446049250313e-16, training_epochs:500, lr:0.05)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 7
+train linear regression time:  0.049320208840072155
+(average_diff:2.813518146238536e-08, max_diff:2.8940290719425832e-08, training_epochs:500, lr:0.05)
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> node index is 5
+train linear regression time:  0.05123287485912442
+testFringe time:  0.3386191655881703
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> =============== update finished ===============
+
+*** Writing Game File 3***
+
+<_io.TextIOWrapper name='../print_tree_record_numpy/print_DR_boost_linear_tree_split.txt' mode='w' encoding='UTF-8'> idx1(Q:0.3968, distinct_name:0, dictinctin_value:2.569683891588169, par:None)
+	idx4(Q:0.3980, distinct_name:0, dictinctin_value:2.507749956207568, par:1)
+		idx6(Q:0.3945, distinct_name:0, dictinctin_value:-0.050698982385153205, par:4)
+			idx8(Q:0.4734, distinct_name:0, dictinctin_value:-0.5002368440471089, par:6)
+				idx10(Q:0.5418, par:8)
+				idx11(Q:0.3364, par:8)
+			idx9(Q:0.3156, par:6)
+		idx7(Q:1.1647, par:4)
+	idx5(Q:0.3511, par:1)

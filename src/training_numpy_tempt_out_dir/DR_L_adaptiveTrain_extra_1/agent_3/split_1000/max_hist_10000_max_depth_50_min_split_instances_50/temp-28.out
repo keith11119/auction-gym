@@ -1,0 +1,14 @@
+WARNING:tensorflow:From /Users/keithwu/opt/anaconda3/envs/auction-gym/lib/python3.10/site-packages/tensorflow/python/compat/v2_compat.py:107: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+<_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'> reading from ../UTree_model_numpy/DR_L_adaptiveTrain/agent_3/model_boost_linear_save_1000_max_hist_10000_max_depth_50_min_split_instances_50/, starting at 28
+Traceback (most recent call last):
+  File "/Users/keithwu/Documents/GitHub/auction-gym/src/c_utree_boost/train_boost_Galen.py", line 67, in <module>
+    train()
+  File "/Users/keithwu/Documents/GitHub/auction-gym/src/c_utree_boost/train_boost_Galen.py", line 48, in train
+    CUTreeAgent.episode(game_number=int(opts.GAME_NUMBER))
+  File "/Users/keithwu/Documents/GitHub/auction-gym/src/c_utree_boost/Agent_boost_Galen_action_numpy.py", line 316, in episode
+    self.read_Utree(game_number=start_game, save_path=self.SAVE_PATH)
+  File "/Users/keithwu/Documents/GitHub/auction-gym/src/c_utree_boost/Agent_boost_Galen_action_numpy.py", line 77, in read_Utree
+    self.utree = pickle.load(open(save_path + 'pickle_Game_File_' + str(game_number) + '.p', 'rb'))
+FileNotFoundError: [Errno 2] No such file or directory: '../UTree_model_numpy/DR_L_adaptiveTrain/agent_3/model_boost_linear_save_1000_max_hist_10000_max_depth_50_min_split_instances_50/pickle_Game_File_28.p'

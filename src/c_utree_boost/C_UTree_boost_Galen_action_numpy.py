@@ -392,6 +392,7 @@ class CUTree:
                     node.update_times += 1
                     times = node.update_times
                     lr = 0.1 * float(1) / (1 + 0.0225 * times) * math.pow(0.977, len(node.instances) / 30)
+                    print(f"lr: {lr}")
                     # lr = 0.05*math.pow(0.02, float(len(node.instances))/float(self.max_hist))
                     training_epochs = len(node.instances) if len(node.instances) > 50 else 50
                     # if self.game_number > 50:
